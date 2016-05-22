@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/dark_black_bg</item>
+        <item name="colorPrimaryDark">@color/dark_black_bg</item>
+        <item name="colorAccent">@color/dark_black_bg</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_activity_bg</item>
+        <item name="colorPrimaryDark">@color/dark_black_bg</item>
+    </style>
+
+
+    <!-- spinner -->
+    <style name="spinner_style">
+        <item name="android:background">@drawable/spinner_select</item>
+        <item name="android:paddingLeft">5dip</item>
+    </style>
+
+</resources>

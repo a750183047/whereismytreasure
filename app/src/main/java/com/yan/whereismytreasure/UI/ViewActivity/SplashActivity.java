@@ -13,7 +13,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Global.initialize(getApplication());
+
         new Thread(){
             @Override
             public void run() {

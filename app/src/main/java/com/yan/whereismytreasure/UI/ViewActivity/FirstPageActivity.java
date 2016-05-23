@@ -61,11 +61,14 @@ public class FirstPageActivity extends MvpActivity<FirstPageInterface,FirstPageP
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 showToast(KUAIDI[position]);
+                if (position ==5){
+                    getPresenter().getInfo(null,null);
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                showToast(KUAIDI[0]);
+
             }
         });
     }

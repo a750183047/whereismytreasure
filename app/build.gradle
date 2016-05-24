@@ -28,6 +28,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:recyclerview-v7:23.3.0'
     //MVP库
     compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
     compile 'com.hannesdorfmann.mosby:viewstate:2.0.1'
@@ -35,4 +36,8 @@ dependencies {
     compile files('libs/juhe_sdk_v_2_7.jar')
     //fastJson
     compile 'com.alibaba:fastjson:1.1.52.android'
+    //superAdapter
+    compile ('org.byteam.superadapter:superadapter:3.2'){
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }
 }

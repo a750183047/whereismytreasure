@@ -1,5 +1,7 @@
 package com.yan.whereismytreasure.UI.ViewInterface;
 
+import android.widget.ListView;
+
 import com.hannesdorfmann.mosby.mvp.MvpView;
 
 /**
@@ -10,4 +12,6 @@ public interface FirstPageInterface extends MvpView {
     void showToast(String s);
     void showList();
     void noResult();
+    void setAdapter();
+    void nowLoading();
 }

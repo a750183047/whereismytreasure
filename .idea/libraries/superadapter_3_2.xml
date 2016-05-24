@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="superadapter-3.2">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/org.byteam.superadapter/superadapter/3.2/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/org.byteam.superadapter/superadapter/3.2/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.byteam.superadapter/superadapter/3.2/ef7dd1f518ad70cb25f0b8976e514b1baeef0cb5/superadapter-3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,4 +1,4 @@
-package com.yan.whereismytreasure.Modle.ExpressInfo;
+package com.yan.whereismytreasure.Modle.Bean.ExpressInfo;
 
 import java.util.ArrayList;
 import java.util.List;

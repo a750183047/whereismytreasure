@@ -1,6 +1,7 @@
 <resources>
 
     <string-array name="kuaidi">
+        <item>请选择快递</item>
         <item>申通快递</item>
         <item>顺丰快递</item>
         <item>圆通快递</item>
@@ -14,7 +15,22 @@
 
     </string-array>
 
-    <string name="app_name">WhereIsMyTreasure</string>
+    <string-array name="kuaididaima">
+        <item>000</item>
+        <item>sto</item>
+        <item>sf</item>
+        <item>yt</item>
+        <item>yd</item>
+        <item>tt</item>
+        <item>ems</item>
+        <item>zto</item>
+        <item>ht</item>
+        <item>qf</item>
+        <item>db</item>
+
+    </string-array>
+
+    <string name="app_name">宝贝到哪了</string>
     <string name="qingshuruyundanhao">请输入运单号</string>
     <string name="dengluhuoqu">登录获取更多内容</string>
     <string name="wujieguo">无结果</string>

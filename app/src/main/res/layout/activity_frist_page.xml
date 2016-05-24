@@ -44,6 +44,16 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="141dp" />
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner"
+        android:id="@+id/progress"
+        android:visibility="gone"
+        style="@android:style/Widget.ProgressBar.Inverse"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="134dp" />
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -52,6 +62,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
         android:visibility="gone"
+        android:divider="@null"
         android:layout_below="@+id/spinner" />
 
     <TextView

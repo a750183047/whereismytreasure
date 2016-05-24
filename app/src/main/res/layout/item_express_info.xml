@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/dark_black_bg">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="05-11 20:00:01"
+        android:textColor="@color/ziti_shense"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/text_time" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/text_time"
+        android:id="@+id/frameLayout">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+
+            android:background="@color/ziti_shense"
+            android:layout_gravity="center_horizontal|top" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/quan"
+            android:id="@+id/imageView"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/text_time"
+            android:layout_gravity="center"
+            />
+
+
+    </FrameLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="【南京市】 到达南京速递物流陆运网邮件集散处理中心（经转）"
+        android:textColor="@color/ziti_shense"
+        android:layout_centerVertical="true"
+        android:id="@+id/text_info"
+        android:layout_toEndOf="@+id/frameLayout" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black_shen"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/text_info" />
+
+
+</RelativeLayout>

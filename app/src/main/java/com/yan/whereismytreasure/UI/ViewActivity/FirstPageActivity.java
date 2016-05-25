@@ -1,5 +1,6 @@
 package com.yan.whereismytreasure.UI.ViewActivity;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,7 +56,7 @@ public class FirstPageActivity extends MvpActivity<FirstPageInterface,FirstPageP
         mDenglu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showToast("功能制作中。。。。");
+               startActivity(new Intent(FirstPageActivity.this,SignInActivity.class));
             }
         });
 

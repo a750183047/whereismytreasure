@@ -5,11 +5,12 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/dark_black_bg</item>
         <item name="colorPrimaryDark">@color/black_shen</item>
-        <item name="colorAccent">@color/dark_black_bg</item>
+        <item name="colorAccent">@color/fenhong</item>
+
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/splashs</item>
+        <item name="android:windowBackground">@drawable/splash</item>
         <item name="colorPrimaryDark">@color/dark_black_bg</item>
     </style>
 

@@ -30,8 +30,11 @@
 
     </string-array>
 
-    <string name="app_name">宝贝到哪了</string>
+    <string name="app_name">快递到哪了</string>
     <string name="qingshuruyundanhao">请输入运单号</string>
     <string name="dengluhuoqu">登录获取更多内容</string>
     <string name="wujieguo">无结果</string>
+    <string name="zhanghao">用户名/邮箱</string>
+    <string name="mima">密码</string>
+    <string name="denglu">登录</string>
 </resources>

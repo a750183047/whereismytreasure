@@ -55,7 +55,9 @@
                     android:id="@+id/edit_account"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/zhanghao" />
+                    android:hint="@string/zhanghao"
+                    android:textColor="@color/ziti_shense"
+                    android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -68,8 +70,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/mima"
+                    android:textColor="@color/ziti_shense"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
+
 
             <Button
                 android:id="@+id/button_sign_in"
@@ -77,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/border_gray_edittext"
+                android:enabled="false"
                 android:text="@string/denglu"
                 android:textColor="@color/white" />
         </LinearLayout>
@@ -91,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:text="注册"
+                android:text="@string/zhuce"
                 android:textColor="@color/ziti_shense"
                 android:textSize="17sp" />
         </RelativeLayout>

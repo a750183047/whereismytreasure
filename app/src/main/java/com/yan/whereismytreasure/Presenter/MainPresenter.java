@@ -2,7 +2,6 @@ package com.yan.whereismytreasure.Presenter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.SystemClock;
 import android.util.Log;
 import android.widget.ListView;
 
@@ -14,20 +13,17 @@ import com.thinkland.sdk.android.Parameters;
 import com.yan.whereismytreasure.App.Global;
 import com.yan.whereismytreasure.Modle.Bean.ExpressInfo.ExpressInfoBean;
 import com.yan.whereismytreasure.Modle.Bean.ExpressInfo.Lists;
-import com.yan.whereismytreasure.Modle.ModleOpreation.GetExpressInfo;
 import com.yan.whereismytreasure.R;
 import com.yan.whereismytreasure.UI.Adapter.ExpressAdapter;
-import com.yan.whereismytreasure.UI.ViewInterface.FirstPageInterface;
+import com.yan.whereismytreasure.UI.ViewInterface.MainInterface;
 
 import java.util.List;
 
 /**
- * FirstPagePresenter
- * Created by a7501 on 2016/5/22.
+ * main
+ * Created by a7501 on 2016/5/28.
  */
-public class FirstPagePresenter extends MvpBasePresenter<FirstPageInterface> {
-
-
+public class MainPresenter extends MvpBasePresenter<MainInterface> {
     private ExpressInfoBean expInfo;
     private List<Lists> expressInfoList;
 
@@ -96,5 +92,4 @@ public class FirstPagePresenter extends MvpBasePresenter<FirstPageInterface> {
         }
         return null;
     }
-
 }

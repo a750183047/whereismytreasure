@@ -3,12 +3,12 @@ package com.yan.whereismytreasure.UI.ViewInterface;
 import com.hannesdorfmann.mosby.mvp.MvpView;
 
 /**
- * 登录
- * Created by a7501 on 2016/5/26.
+ * Sign Up
+ * Created by a7501 on 2016/5/28.
  */
-public interface SignInInterface extends MvpView {
+public interface SignUpInterface extends MvpView {
     void showError(String s);
-    void onSignUnOk();
+    void onSignUpOk();
     void showProgressBar();
     void dismissProgressBar();
 }

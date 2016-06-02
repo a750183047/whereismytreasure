@@ -45,6 +45,7 @@ public class SignInActivity extends MvpActivity<SignInInterface,SignInPresenter>
         mAccount = (EditText) findViewById(R.id.edit_account);
         mPassword = (EditText) findViewById(R.id.edit_password);
         mSingIn = (Button) findViewById(R.id.button_sign_in);
+        assert mSingIn != null;
         mSingIn.setOnClickListener(this);
         mSignUp = (TextView) findViewById(R.id.text_sign_up);
         showProgressBar = new ShowProgressBar();

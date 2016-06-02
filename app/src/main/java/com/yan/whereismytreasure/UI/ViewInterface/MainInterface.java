@@ -12,4 +12,7 @@ public interface MainInterface extends MvpView {
     void noResult();
     void setAdapter();
     void nowLoading();
+    void traceExpress();
+    void isTraceExpress();
+    void createDialog();
 }

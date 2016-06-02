@@ -1,10 +1,12 @@
 package com.yan.whereismytreasure.UI.ViewActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -90,9 +92,36 @@ public class MainActivity extends MvpActivity<MainInterface,MainPresenter>
         mDenglu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showToast("还在开发中呢。。");
+
+                getPresenter().isTraceExpress();
+
+
+
             }
         });
+    }
+
+    @Override
+    public void createDialog() {
+        EditText mTraceName = new EditText(MainActivity.this);
+        mTraceName.setFocusable(true);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("追踪该快递");
+        builder.setView(mTraceName)
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).setPositiveButton("确认", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        builder.show();
     }
 
     /***
@@ -126,6 +155,7 @@ public class MainActivity extends MvpActivity<MainInterface,MainPresenter>
                         if (!(no.length()<8)){
                             getPresenter().getInfo(KuaiDiDaiMa[position],no,mJieguo);
                             getPresenter().saveToSP(Global.mContext,no);
+                            traceExpress();
                         }else {
                             showToast("运单号好像有问题啊");
                         }
@@ -227,5 +257,16 @@ public class MainActivity extends MvpActivity<MainInterface,MainPresenter>
         mWujieguo.setVisibility(View.GONE);
         mProgressBar.setVisibility(View.VISIBLE);
         Log.e("First","noLoading");
+    }
+
+    @Override
+    public void traceExpress() {
+        mDenglu.setEnabled(true);
+    }
+
+    @Override
+    public void isTraceExpress() {
+        mDenglu.setEnabled(false);
+        mDenglu.setText("该运单已追踪");
     }
 }

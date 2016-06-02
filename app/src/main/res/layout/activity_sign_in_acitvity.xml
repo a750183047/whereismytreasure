@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:background="@drawable/border_gray_edittext"
+                android:background="@drawable/button_select"
                 android:enabled="false"
                 android:text="@string/denglu"
                 android:textColor="@color/white" />

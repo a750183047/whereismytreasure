@@ -1,10 +1,12 @@
 package com.yan.whereismytreasure.Modle.Bean.ExpressInfo;
 
+import cn.bmob.v3.BmobObject;
+
 /**
  * 快递信息
  * Created by a7501 on 2016/5/23.
  */
-public class ExpressInfoBean {
+public class ExpressInfoBean extends BmobObject{
     private String resultcode;  //标识码
     private String reason;
     private Result result;

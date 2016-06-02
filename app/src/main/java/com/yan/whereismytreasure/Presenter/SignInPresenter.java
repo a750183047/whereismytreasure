@@ -1,11 +1,16 @@
 package com.yan.whereismytreasure.Presenter;
 
+import android.util.Log;
+
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 import com.yan.whereismytreasure.App.Global;
 import com.yan.whereismytreasure.Modle.Bean.UserBean.MyUser;
+import com.yan.whereismytreasure.Modle.DB.DBManager;
 import com.yan.whereismytreasure.UI.ViewInterface.SignInInterface;
 
 import cn.bmob.v3.listener.SaveListener;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
 
 /**
  * 登录
@@ -13,9 +18,9 @@ import cn.bmob.v3.listener.SaveListener;
  */
 public class SignInPresenter extends MvpBasePresenter<SignInInterface> {
 
-    public void signIn(String account,String password){
+    public void signIn(String account, String password) {
         getView().showProgressBar();
-        MyUser myUser = new MyUser();
+        final MyUser myUser = new MyUser();
         myUser.setUsername(account);
         myUser.setPassword(password);
         myUser.login(Global.mContext, new SaveListener() {
@@ -23,6 +28,8 @@ public class SignInPresenter extends MvpBasePresenter<SignInInterface> {
             public void onSuccess() {
                 getView().dismissProgressBar();
                 getView().onSignUnOk();
+                insertUserToDB(myUser);
+
             }
 
             @Override
@@ -31,5 +38,33 @@ public class SignInPresenter extends MvpBasePresenter<SignInInterface> {
                 getView().showError(s);
             }
         });
+    }
+
+
+    /**
+     * 向数据库中插入用户信息
+     *
+     * @param myUser
+     */
+    public void insertUserToDB(MyUser myUser) {
+        DBManager.getInstance(Global.mContext)
+                .setUserInfo(myUser)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Boolean>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(Boolean aBoolean) {
+                        Log.e("SignUp", "db insert " + aBoolean);
+                    }
+                });
     }
 }

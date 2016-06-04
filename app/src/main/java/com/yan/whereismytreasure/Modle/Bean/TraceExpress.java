@@ -9,6 +9,15 @@ import cn.bmob.v3.BmobObject;
 public class TraceExpress extends BmobObject{
     private String user;
     private String expressId;
+    private String title;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public String getUser() {
         return user;

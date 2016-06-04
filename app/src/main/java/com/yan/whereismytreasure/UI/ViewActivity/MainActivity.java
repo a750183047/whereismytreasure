@@ -1,5 +1,6 @@
 package com.yan.whereismytreasure.UI.ViewActivity;
 
+import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -89,6 +90,8 @@ public class MainActivity extends MvpActivity<MainInterface,MainPresenter>
         initSpinner();
         initEditText();
 
+
+
         mDenglu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,11 +106,11 @@ public class MainActivity extends MvpActivity<MainInterface,MainPresenter>
 
     @Override
     public void createDialog() {
-        EditText mTraceName = new EditText(MainActivity.this);
+        final EditText mTraceName = new EditText(MainActivity.this);
         mTraceName.setFocusable(true);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("追踪该快递");
+        final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("起个名字吧");
         builder.setView(mTraceName)
                 .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
@@ -117,10 +120,14 @@ public class MainActivity extends MvpActivity<MainInterface,MainPresenter>
                 }).setPositiveButton("确认", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                if (!mTraceName.getText().toString().isEmpty()) {
+                    getPresenter().updateTraceTitle(mTraceName.getText().toString());
+                }else {
+                    showToast("名称不能是空的");
+                }
             }
         });
-
+        builder.setCancelable(false);
         builder.show();
     }
 
@@ -130,6 +137,8 @@ public class MainActivity extends MvpActivity<MainInterface,MainPresenter>
     private void initEditText() {
         if (getPresenter().getNumberFromSP(Global.mContext) != null){
             mYundanNumber.setText(getPresenter().getNumberFromSP(Global.mContext));
+            NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            manager.cancel(Integer.valueOf(getPresenter().getNumberFromSP(Global.mContext)));   //如果是从通知栏进来的，消除通知栏
         }
     }
 
@@ -262,6 +271,7 @@ public class MainActivity extends MvpActivity<MainInterface,MainPresenter>
     @Override
     public void traceExpress() {
         mDenglu.setEnabled(true);
+        mDenglu.setText("追踪该订单");
     }
 
     @Override

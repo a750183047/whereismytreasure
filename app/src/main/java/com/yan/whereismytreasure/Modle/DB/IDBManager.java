@@ -22,5 +22,6 @@ public interface IDBManager {
     Observable<Integer> doseHaveUpdate(String no,List<Lists> list);
     Observable<Boolean> traceExpress(TraceExpress traceExpress);
     Observable<Boolean> isTraceExpress(String no);
+    Observable<Boolean> updateTraceTitle(String title,String no);
 
 }

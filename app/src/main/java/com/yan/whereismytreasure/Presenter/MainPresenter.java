@@ -1,6 +1,7 @@
 package com.yan.whereismytreasure.Presenter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import com.yan.whereismytreasure.Modle.Bean.TraceExpress;
 import com.yan.whereismytreasure.Modle.Bean.UserBean.MyUser;
 import com.yan.whereismytreasure.Modle.DB.DBManager;
 import com.yan.whereismytreasure.R;
+import com.yan.whereismytreasure.Servers.TraceServer;
 import com.yan.whereismytreasure.UI.Adapter.ExpressAdapter;
 import com.yan.whereismytreasure.UI.ViewInterface.MainInterface;
 
@@ -322,6 +324,36 @@ public class MainPresenter extends MvpBasePresenter<MainInterface> {
                         }
                     }
                 });
+
+    }
+
+    /**
+     * 更新追踪快递单号
+     * @param title
+     */
+    public void updateTraceTitle(String title){
+        if (expInfo != null){
+            DBManager.getInstance(Global.mContext)
+                    .updateTraceTitle(title,expInfo.getResult().getNo())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Subscriber<Boolean>() {
+                        @Override
+                        public void onCompleted() {
+                            Global.mContext.startService(new Intent(Global.mContext,TraceServer.class));
+
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+
+                        }
+
+                        @Override
+                        public void onNext(Boolean aBoolean) {
+
+                        }
+                    });
+        }
 
     }
 }

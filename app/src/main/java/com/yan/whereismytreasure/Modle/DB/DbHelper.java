@@ -55,13 +55,14 @@ public class DBHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER);
         db.execSQL(CREATE_EXPRESS);
+        db.execSQL(CREATE_TRACE);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (newVersion > oldVersion){
-            db.execSQL(CREATE_TRACE);
+
         }
     }
 }

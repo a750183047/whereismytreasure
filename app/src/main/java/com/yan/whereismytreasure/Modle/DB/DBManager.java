@@ -197,6 +197,26 @@ public class DBManager implements IDBManager {
         }).subscribeOn(Schedulers.io());
     }
 
+    /**
+     * 更新追踪单号的名称
+     * @param title   名称
+     * @param no      单号
+     * @return     op
+     */
+    @Override
+    public Observable<Boolean> updateTraceTitle(final String title, final String no) {
+        return Observable.create(new Observable.OnSubscribe<Boolean>() {
+            @Override
+            public void call(Subscriber<? super Boolean> subscriber) {
+                ContentValues values = new ContentValues();
+                values.put("t_title",title);
+                sqLiteDatabase.update("trace",values,"e_express_id = ?",new String[]{no});
+                subscriber.onNext(true);
+                subscriber.onCompleted();
+            }
+        }).subscribeOn(Schedulers.io());
+    }
+
 
     /**
      * 数据的数量

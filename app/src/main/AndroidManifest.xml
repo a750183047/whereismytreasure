@@ -44,7 +44,12 @@
         <activity
             android:name=".UI.ViewActivity.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+
+        <service
+            android:name=".Servers.TraceServer"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

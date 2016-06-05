@@ -12,6 +12,7 @@ import com.yan.whereismytreasure.Modle.Bean.ExpressInfo.Result;
 import com.yan.whereismytreasure.Modle.Bean.TraceExpress;
 import com.yan.whereismytreasure.Modle.Bean.UserBean.MyUser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.BmobUser;
@@ -163,6 +164,7 @@ public class DBManager implements IDBManager {
                     ContentValues contentValues = new ContentValues();
                     contentValues.put("u_id",traceExpress.getUser());
                     contentValues.put("e_express_id",traceExpress.getExpressId());
+                    contentValues.put("e_express_com",traceExpress.getCompany());
                     sqLiteDatabase.insert("trace",null,contentValues);
                 }
             }
@@ -216,6 +218,36 @@ public class DBManager implements IDBManager {
             }
         }).subscribeOn(Schedulers.io());
     }
+    /**
+     * 获取追踪快递列表
+     * @return
+     */
+
+    @Override
+    public Observable<List<TraceExpress>> getAllTraceExpress() {
+        return Observable.create(new Observable.OnSubscribe<List<TraceExpress>>() {
+            @Override
+            public void call(Subscriber<? super List<TraceExpress>> subscriber) {
+                List<TraceExpress> list = new ArrayList<TraceExpress>();
+                Cursor cursor = sqLiteDatabase.query("trace",null,null,null,null,null,null);
+                if (cursor.moveToFirst()){
+                    do {
+                        TraceExpress traceExpress = new TraceExpress();
+                        traceExpress.setExpressId(cursor.getString(cursor.getColumnIndex("e_express_id")));
+                        traceExpress.setUser(cursor.getString(cursor.getColumnIndex("u_id")));
+                        traceExpress.setTitle(cursor.getString(cursor.getColumnIndex("t_title")));
+                        list.add(traceExpress);
+                    }while (cursor.moveToNext());
+                }
+                cursor.close();
+                subscriber.onNext(list);
+                subscriber.onCompleted();
+            }
+        }).subscribeOn(Schedulers.io());
+    }
+
+
+
 
 
     /**

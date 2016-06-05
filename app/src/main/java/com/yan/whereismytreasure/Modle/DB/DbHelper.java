@@ -36,6 +36,7 @@ public class DBHelper extends SQLiteOpenHelper{
             +"id integer primary key autoincrement,"                       //自增主键
             +"u_id          text,"                                               // 用户id
             +"e_express_id  text,"
+            +"e_express_com text,"                                      //快递公司
             +"t_title       text"                                      //名称
             +")";
 

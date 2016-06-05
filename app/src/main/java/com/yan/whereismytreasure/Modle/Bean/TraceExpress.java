@@ -10,6 +10,15 @@ public class TraceExpress extends BmobObject{
     private String user;
     private String expressId;
     private String title;
+    private String company;
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
 
     public String getTitle() {
         return title;

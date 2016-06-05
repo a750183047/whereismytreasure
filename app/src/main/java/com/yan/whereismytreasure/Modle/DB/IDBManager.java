@@ -23,5 +23,6 @@ public interface IDBManager {
     Observable<Boolean> traceExpress(TraceExpress traceExpress);
     Observable<Boolean> isTraceExpress(String no);
     Observable<Boolean> updateTraceTitle(String title,String no);
+    Observable<List<TraceExpress>> getAllTraceExpress();
 
 }

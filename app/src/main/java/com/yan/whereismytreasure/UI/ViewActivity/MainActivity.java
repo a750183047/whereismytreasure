@@ -137,8 +137,7 @@ public class MainActivity extends MvpActivity<MainInterface,MainPresenter>
     private void initEditText() {
         if (getPresenter().getNumberFromSP(Global.mContext) != null){
             mYundanNumber.setText(getPresenter().getNumberFromSP(Global.mContext));
-            NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            manager.cancel(Integer.valueOf(getPresenter().getNumberFromSP(Global.mContext)));   //如果是从通知栏进来的，消除通知栏
+
         }
     }
 

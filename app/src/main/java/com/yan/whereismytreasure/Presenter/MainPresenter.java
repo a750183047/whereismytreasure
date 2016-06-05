@@ -275,6 +275,7 @@ public class MainPresenter extends MvpBasePresenter<MainInterface> {
             TraceExpress traceExpress = new TraceExpress();
             traceExpress.setUser(userInfo.getObjectId());
             traceExpress.setExpressId(expInfo.getResult().getNo());
+            traceExpress.setCompany(expInfo.getResult().getCom());
             DBManager.getInstance(Global.mContext)
                     .traceExpress(traceExpress)
                     .observeOn(AndroidSchedulers.mainThread())
